@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const {PrismaClient} = require("@prisma/client");
+const { PrismaClient } = require("@prisma/client");
 
 const prismaClient = new PrismaClient();
 
@@ -24,7 +24,7 @@ const main = async () => {
         restaurantId: restaurant.id,
       },
     });
-    await tx.products.createMany({
+    await tx.product.createMany({
       data: [
         {
           name: "McOferta Média Big Mac Duplo",
@@ -109,7 +109,7 @@ const main = async () => {
         restaurantId: restaurant.id,
       },
     });
-    await tx.products.createMany({
+    await tx.product.createMany({
       data: [
         {
           name: "Big Mac",
@@ -194,7 +194,7 @@ const main = async () => {
         restaurantId: restaurant.id,
       },
     });
-    await tx.products.createMany({
+    await tx.product.createMany({
       data: [
         {
           name: "Fritas Grande",
@@ -236,7 +236,7 @@ const main = async () => {
         restaurantId: restaurant.id,
       },
     });
-    await tx.products.createMany({
+    await tx.product.createMany({
       data: [
         {
           name: "Coca-cola",
@@ -276,7 +276,7 @@ const main = async () => {
         restaurantId: restaurant.id,
       },
     });
-    await tx.products.createMany({
+    await tx.product.createMany({
       data: [
         {
           name: "Casquinha de Baunilha",
@@ -320,4 +320,3 @@ main()
   .finally(async () => {
     await prismaClient.$disconnect();
   });
-
